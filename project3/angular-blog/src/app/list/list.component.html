@@ -1,0 +1,9 @@
+<h2>Blog List</h2>
+<div><button class="btn btn-primary" (click)="newPost()">New Post</button></div>
+<br />
+<ul *ngIf="posts" class="list-group">
+    <a *ngFor="let post of posts" class="list-group-item align-items-center" [routerLink]="['/edit', post.postid]">
+    <span class="badge badge-info badge-pill">{{post.created | date:'short'}}</span>
+    &nbsp;&nbsp;{{post.title}}
+    </a>
+</ul>

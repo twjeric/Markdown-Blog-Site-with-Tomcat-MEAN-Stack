@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body class="container">
+    <header>
+        <% include ./header %>
+    </header>
+    <div><%- post.title %></div>
+    <div><%- post.body %></div>
+    <div><p>Created:</p><p><%= post.created %></p></div>
+    <div><p>Modified:</p><p><%= post.modified %></p></div>
+    <footer>
+      <% include ./footer %>
+    </footer>
+  </body>
+</html>

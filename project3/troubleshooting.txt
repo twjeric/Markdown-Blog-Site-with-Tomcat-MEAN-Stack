@@ -1,0 +1,14 @@
+sudo lsof -i :49152
+sudo kill -15 <pid>
+docker start -i mean
+
+Start application:
+cd to app directory then
+ng serve --host 0.0.0.0
+
+ng build
+1. Router configuration with
+CommonModule,RouterModule.forRoot(routes,{useHash:true})
+2. and this in the index.html file
+Removed base Href="/" tag from html and added it like this.
+<script>document.write('<base href="' + document.location + '" />');</script>

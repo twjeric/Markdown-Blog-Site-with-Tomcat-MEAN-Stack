@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body class="container">
+    <h1><%= title %>:</h1>
+    <form method="POST" class="login">
+      <fieldset>
+        <p><input id="username" name="username" type="text" placeholder="username"></p>
+        <p><input id="password" name="password" type="password" placeholder="password"></p>
+        <input type="hidden" name="redirect" value="<%= redirect %>"/>
+      </fieldset>
+      <button class="btn btn-primary" type="submit">Log In</button>
+    </form>
+    <footer>
+      <% include ./footer %>
+    </footer>
+  </body>
+</html>

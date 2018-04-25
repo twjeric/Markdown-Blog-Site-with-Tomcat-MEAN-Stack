@@ -1,0 +1,11 @@
+val lines = sc.textFile("twitter.edges")
+val dicts = lines.map(line => line.split(":"))
+val followers = dicts.flatMap(pair => {
+	val user = pair(0)
+	val following = pair(1)
+	val follows = following.split(",")
+	follows.map( follow => (follow, 1) )
+})
+val topUsers = followers.reduceByKey((a,b) => a+b).filter( (t) => t._2 > 1000 ).sortBy(- _._2)
+topUsers.saveAsTextFile("output")
+System.exit(0)

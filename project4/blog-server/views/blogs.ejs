@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blogs</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body class="container">
+    <header>
+        <% include ./header %>
+    </header>
+    <ul>
+    <% for (let post of posts) { %>
+        <li>
+        <div><%- post.title %></div>
+        <div><%- post.body %></div>
+        </li>
+    <% } %>
+    </ul>
+    <% if (nextUrl) { %>
+    <div><a id='next' class='btn btn-primary' href='<%= nextUrl %>'>Next</a></div>
+    <% } %>
+    <footer>
+      <% include ./footer %>
+    </footer>
+  </body>
+</html>
